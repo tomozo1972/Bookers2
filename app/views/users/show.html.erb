@@ -11,7 +11,7 @@
 
 
 <h1>New book</h1>
-  <%= form_with model: @book do |f| %>
+  <%= form_with model: Book.new do |f| %>
     <h4>title</h4>
       <%= f.text_field :title %>
     <h4>opinion</h4>
@@ -27,6 +27,6 @@
     <% end %>
     <P>ユーザー画像:<%= image_tag book.user.get_profile_image(100, 100) %></P>
     <p>title:<%= book.title %></p>
-    <p>opinion:<%= book.opinion %></p>
+    <p>opinion:<%= book.body %></p>
   </div>
   <% end %>
