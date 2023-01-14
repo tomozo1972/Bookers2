@@ -1,2 +1,46 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<h2>User info</h2>
+<div>
+  <%= image_tag @user.get_profile_image(300, 300) %>
+  <table>
+    <tbody>
+      <tr></tr>
+      <tr>
+        <th>name</th>
+        <th><%= @user.name %></th>
+      </tr>
+      <tr>
+        <th>introduction</th>
+        <th><%= @user.introduction %></th>
+      </tr>
+    </tbody>
+  </table>
+    <%= link_to edit_user_path(@user) do %>
+    <i class="fas fa-user-cog"></i>
+    <% end %>
+</div>
+
+
+<h2>New book</h2>
+  <%= form_with model: @book do |f| %>
+    <h4>title</h4>
+      <%= f.text_field :title %>
+    <h4>opinion</h4>
+      <%= f.text_field :body %><br/>
+    <%= f.submit 'Create Book' %>
+  <% end %>
+
+
+<h2>Book detail</h2>
+<table>
+  <tbody>
+      <tr>
+        <td>
+          <%= link_to user_path(@user) do %>
+            <%= image_tag @user.get_profile_image(100, 100) %>
+          <% end %>
+        </td>
+        <td><%= link_to @book.title, book_path(@book) %></td>
+        <td><%= @book.body %></td>
+      </tr>
+  </tbody>
+</table>
