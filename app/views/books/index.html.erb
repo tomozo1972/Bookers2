@@ -24,9 +24,9 @@
 
 <h2>New book</h2>
   <%= form_with model: @book do |f| %>
-    <h4>title</h4>
+    <p>title</p>
       <%= f.text_field :title %>
-    <h4>opinion</h4>
+    <p>opinion</p>
       <%= f.text_field :body %><br/>
     <%= f.submit 'Create Book' %>
   <% end %>
