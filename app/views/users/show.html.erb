@@ -1,6 +1,6 @@
 <h2>User info</h2>
 <div>
-  <%= image_tag @user.get_profile_image(300, 300) %>
+  <%= image_tag @user.get_profile_image(100, 100) %>
   <table>
     <tbody>
       <tr></tr>
@@ -52,10 +52,6 @@
         </td>
         <td><%= link_to book.title, book_path(book) %></td>
         <td><%= book.body %></td>
-        <% if @user == current_user %>
-          <td><%= link_to "edit", edit_book_path(@book) %></td>
-          <td><%= link_to "destroy", book_path(@book), method: :delete, "data-confirm" => "本当に消しますか？" %></td>
-        <% end %>
       </tr>
     <% end %>
   </tbody>
