@@ -1,4 +1,6 @@
 <h1>Editing Book</h1>
+<%= render 'error', book: @book %>
+
 <%= form_with model:@book do |f| %>
 <div>
   <label for="inputTitle">Title</label><br>
@@ -6,10 +8,11 @@
 </div>
 <div>
   <label for="inputOpinion">Opinion</label></br>
-  <%= f.text_area :opinion %>
+  <%= f.text_area :body %>
 </div>
   <%= f.submit "Update Book" %>
 <% end %>
+
 <%= link_to "show", book_path %>
 |
 <%= link_to "back", books_path %>
